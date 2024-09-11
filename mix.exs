@@ -8,8 +8,8 @@ defmodule PKCS7.Mixfile do
      description: "PKCS7 binary padding for erlang",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     package: package,
-     deps: deps]
+     package: package(),
+     deps: deps()]
   end
 
   def application do
@@ -17,8 +17,11 @@ defmodule PKCS7.Mixfile do
   end
 
   defp deps do
-    [{:excheck, "~> 0.2.3", only: [:dev, :test]},
-     {:triq, github: "krestenkrab/triq", only: [:dev, :test]}]
+    [
+      # these frameworks are long dead.
+      #   {:excheck, "~> 0.6.0", only: [:dev, :test]},
+      #   {:triq, github: "krestenkrab/triq", only: [:dev, :test]}
+    ]
   end
 
   defp package do
